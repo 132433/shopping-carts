@@ -12,21 +12,21 @@ pipeline{
         stage('build'){
             steps{
                 echo 'this is the build job'
-                sh 'compile'
+                sh 'mvn compile'
                 
             }
         }
         stage('test'){
             steps{
                 echo 'this is the testjob'
-                sh 'clean test'
+                sh 'mvn clean test'
                 
             }
         }
         stage('package'){
             steps{
                 echo 'this is the package job'
-                sh 'package -DskipTests'
+                sh 'mvn package -DskipTests'
              
             }
         }
